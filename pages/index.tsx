@@ -18,7 +18,7 @@ export default function Home() {
       return item.id !== id
     })
     setTodos(newTodos)
-    console.log(newTodos)
+    // console.log(newTodos)
   }
 
   function addTodo(newTodo) {

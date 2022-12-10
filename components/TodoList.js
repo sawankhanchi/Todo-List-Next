@@ -23,13 +23,13 @@ function TodoList({ todos, deleteTodo, editTodo }) {
         setIsOpen(true)
         // we've set the passed todo to modal value
         setModalValue(todo)
-        console.log(todo)
+        // console.log(todo)
     }
 
     function handleEditInputChange(e, id) {
 
         setModalValue({ ...modalValue, text: e.target.value });
-        console.log(modalValue, id)
+        // console.log(modalValue, id)
     }
 
     function handleEditSubmit(e) {
@@ -60,8 +60,8 @@ function TodoList({ todos, deleteTodo, editTodo }) {
                                         <Text>{todo.text}</Text>
 
                                         <Flex w="10px" >
-                                            <DeleteIcon color="red.500" mr="2" onClick={() => deleteTodo(todo.id)} />
-                                            <EditIcon onClick={() => handleEditClick(todo)} />
+                                            <DeleteIcon cursor="pointer" color="red.500" mr="2" onClick={() => deleteTodo(todo.id)} />
+                                            <EditIcon cursor="pointer" onClick={() => handleEditClick(todo)} />
                                         </Flex>
 
                                         {/* modal for editing a todo */}
@@ -81,15 +81,14 @@ function TodoList({ todos, deleteTodo, editTodo }) {
                                                             onChange={handleEditInputChange} />
                                                     </ModalBody>
                                                     <ModalFooter>
-                                                        <Button colorScheme="teal" mr={3} onClick={onClose}>
+                                                        <Button colorScheme="red" mr={3} onClick={onClose}>
                                                             Close
                                                         </Button>
-                                                        <Button type="submit" colorScheme="teal" mr={3}>
+                                                        <Button type="submit" colorScheme="blue" mr={3}>
                                                             Update
                                                         </Button>
                                                     </ModalFooter>
                                                 </form>
-
                                             </ModalContent>
                                         </Modal>
                                     </Flex>
